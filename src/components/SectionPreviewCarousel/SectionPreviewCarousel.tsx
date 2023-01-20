@@ -1,13 +1,7 @@
 import React from 'react'
 
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay, EffectFade } from 'swiper'
-import { BiChevronLeft, BiChevronRight } from 'react-icons/bi'
-
-import 'swiper/css'
-import 'swiper/css/autoplay'
-import 'swiper/css/navigation'
-import 'swiper/css/effect-fade'
+import { SwiperSlide } from 'swiper/react'
+import { Carousel } from 'components/Carousel'
 
 const images = [
   'https://istv.uz/uploads/IMG_6228.JPG',
@@ -19,15 +13,7 @@ const images = [
 
 export const SectionPreviewCarousel = () => {
   return (
-    <Swiper
-      className="relative group"
-      spaceBetween={0}
-      slidesPerView={1}
-      autoplay={{ delay: 6000 }}
-      effect="fade"
-      navigation={{ prevEl: '.btn-prev-slide', nextEl: '.btn-next-slide' }}
-      modules={[Navigation, Autoplay, EffectFade]}
-    >
+    <Carousel navigation={true} spaceBetween={0} slidesPerView={1} effect="fade">
       {images.map((image) => (
         <SwiperSlide key={image}>
           <img src={image} className="w-full" />
@@ -39,12 +25,6 @@ export const SectionPreviewCarousel = () => {
           </button>
         </SwiperSlide>
       ))}
-      <div className="z-10 ease-in duration-300 cursor-pointer bg-zinc-800/60 text-white absolute top-[calc(50%-16px)] group-hover:left-0 -left-10 btn-prev-slide">
-        <BiChevronLeft className="w-8 h-8" />
-      </div>
-      <div className="z-10 ease-in duration-300 cursor-pointer bg-zinc-800/60 text-white absolute top-[calc(50%-16px)] group-hover:right-0 -right-10 btn-next-slide ">
-        <BiChevronRight className="w-8 h-8" />
-      </div>
-    </Swiper>
+    </Carousel>
   )
 }
