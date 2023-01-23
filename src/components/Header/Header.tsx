@@ -11,7 +11,7 @@ export const Header = () => {
   return (
     <>
       <header
-        className={`anim transition-all ease-in duration-500 fixed left-0 w-full z-50 ${
+        className={`transition-all ease-in duration-500 fixed left-0 w-full z-50 ${
           isScrollTrue ? '-top-[90px] md:-top-[37px]' : 'top-0'
         }`}
       >
