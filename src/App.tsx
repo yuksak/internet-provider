@@ -1,11 +1,12 @@
 import { Route, Routes } from 'react-router-dom'
 
 import { Layout } from 'components'
-import { MainPage, NotFoundPage } from 'pages'
+import { MainPage, NotFoundPage, VacanciesPage } from 'pages'
 
 const routes = [
   { path: '*', component: <NotFoundPage /> },
   { path: '/', component: <MainPage /> },
+  { path: '/vacancies', component: <VacanciesPage /> },
 ]
 
 function App() {
