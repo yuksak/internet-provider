@@ -1,38 +1,7 @@
 import React from 'react'
-import istvLogo from 'assets/istv-logo.svg'
+
 import { FaTelegramPlane, FaFacebookF } from 'react-icons/fa'
-
-const footerRoutes = [
-  {
-    title: 'Tariflar',
-    links: [
-      { name: 'Internet', url: '#' },
-      { name: 'Televizor', url: '#' },
-      { name: 'IPTV', url: '#' },
-    ],
-  },
-  {
-    title: 'Yordam',
-    links: [
-      { name: 'Ofis manzillari', url: '#' },
-      { name: "Ko'p so'raladigan savollar", url: '#' },
-      { name: "Ish o'rni", url: '#' },
-    ],
-  },
-]
-
-const socials = [
-  {
-    name: 'telegram',
-    icon: <FaTelegramPlane className="h-4 w-4" />,
-    url: 'https://t.me/ISTVonlinesupport',
-  },
-  {
-    name: 'facebook',
-    icon: <FaFacebookF className="h-4 w-4" />,
-    url: 'https://www.facebook.com/ISTV.uzbekistan/',
-  },
-]
+import istvLogo from 'assets/istv-logo.svg'
 
 export const Footer = () => {
   return (
@@ -92,3 +61,35 @@ export const Footer = () => {
     </footer>
   )
 }
+
+const footerRoutes = [
+  {
+    title: 'Tariflar',
+    links: [
+      { name: 'Internet', url: '#' },
+      { name: 'Televizor', url: '#' },
+      { name: 'IPTV', url: '#' },
+    ],
+  },
+  {
+    title: 'Yordam',
+    links: [
+      { name: 'Ofis manzillari', url: '#' },
+      { name: "Ko'p so'raladigan savollar", url: '#' },
+      { name: "Ish o'rni", url: '#' },
+    ],
+  },
+]
+
+const socials = [
+  {
+    name: 'telegram',
+    icon: <FaTelegramPlane className="h-4 w-4" />,
+    url: 'https://t.me/ISTVonlinesupport',
+  },
+  {
+    name: 'facebook',
+    icon: <FaFacebookF className="h-4 w-4" />,
+    url: 'https://www.facebook.com/ISTV.uzbekistan/',
+  },
+]
