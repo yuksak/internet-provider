@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+
 import { Button } from 'components/Button'
 import { CardInfoTitle } from './ListTitle'
 
@@ -91,7 +92,7 @@ export const InternetItem: FC<ICard> = ({
         </CardInfoTitle>
       </ul>
 
-      <Button name="Ulanish">
+      <Button name="Ulanish" className="w-full py-2.5">
         <IoRocket className="h-4 w-4 mr-1" />
       </Button>
     </div>
