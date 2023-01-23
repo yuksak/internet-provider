@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { SwiperSlide } from 'swiper/react'
-import { Carousel } from 'components/Carousel'
+import { Carousel, Button } from 'components'
 
 const images = [
   'https://istv.uz/uploads/IMG_6228.JPG',
@@ -17,12 +17,10 @@ export const SectionPreviewCarousel = () => {
       {images.map((image) => (
         <SwiperSlide key={image}>
           <img src={image} className="w-full" />
-          <button
-            type="button"
-            className="absolute right-[10%] bottom-[10%] text-white font-medium text-[10px] sm:text-sm ease-in duration-200 hover:text-blue-500 uppercase flex items-center gap-0.5 bg-zinc-800/60 hover:bg-white px-2 py-1 sm:px-5 sm:py-2.5 text-center mr-2 md:mr-0"
-          >
-            Batafsil
-          </button>
+          <Button
+            name="Batafsil"
+            className="absolute right-[10%] bottom-[10%] opacity-50 hover:opacity-100"
+          />
         </SwiperSlide>
       ))}
     </Carousel>
