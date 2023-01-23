@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useScrollPosition } from 'hooks'
+import { Link } from 'react-router-dom'
 
+import { useScrollPosition } from 'hooks'
 import { Modal, Button } from 'components'
 
 import { IoRocket, IoMenu } from 'react-icons/io5'
@@ -26,7 +27,7 @@ export const NavbarBottom = () => {
         }`}
       >
         <div className="container flex flex-wrap items-center justify-between mx-auto">
-          <a href="/">
+          <Link to="/">
             <img
               src={isScrollTrue ? istvGrayLogo : istvLogo}
               className={`h-10 mr-3 ease-in duration-500 hover:animate-pulse ${
@@ -34,7 +35,7 @@ export const NavbarBottom = () => {
               }`}
               alt="Company Logo"
             />
-          </a>
+          </Link>
 
           <div className="flex flex-row md:order-2">
             <Button name="Ulanish" onClick={modalFn}>
@@ -57,12 +58,12 @@ export const NavbarBottom = () => {
             <ul className="flex flex-col mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
               {navRoutes.map(({ name, url }) => (
                 <li key={name}>
-                  <a
-                    href={url}
+                  <Link
+                    to={url}
                     className="block text-gray-700 rounded uppercase hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
                   >
                     {name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -79,5 +80,5 @@ const navRoutes = [
   { name: 'Televizor', url: '#' },
   { name: 'IPTV', url: '#' },
   { name: 'Xizmatlar', url: '#' },
-  { name: "Ish o'rni", url: '#' },
+  { name: "Ish o'rni", url: '/vacancies' },
 ]
