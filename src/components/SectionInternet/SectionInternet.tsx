@@ -33,6 +33,7 @@ export const SectionInternet = () => {
       <SectionTitle title="Uy uchun internet" />
       <Tabs titles={tariffs} onClick={clickHandler} data={cards} />
       <Carousel
+        className="sm:py-3"
         pagination={true}
         navigation={true}
         spaceBetween={5}
