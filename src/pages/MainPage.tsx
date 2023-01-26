@@ -11,9 +11,9 @@ export const MainPage = () => {
   return (
     <div>
       <SectionPreviewCarousel />
-      <SectionNotifications />
-      <SectionResources />
       <SectionInternet />
+      <SectionResources />
+      <SectionNotifications />
       <SectionPayment />
     </div>
   )
