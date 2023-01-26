@@ -29,7 +29,7 @@ export const SectionInternet = () => {
   }
 
   return (
-    <div className="py-0 sm:py-5 px-2">
+    <div className="px-2">
       <SectionTitle title="Uy uchun internet" />
       <Tabs titles={tariffs} onClick={clickHandler} data={cards} />
       <Carousel
