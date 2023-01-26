@@ -1,3 +1,3 @@
 # Internet Provider
 
-Deploy:
+Deploy: https://ip-yuksak.netlify.app/
