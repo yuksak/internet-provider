@@ -81,7 +81,7 @@ export const NavbarBottom = () => {
           </div>
         </div>
       </nav>
-      {modal && <Modal />}
+      {modal && <Modal onClick={setModal} />}
     </>
   )
 }
