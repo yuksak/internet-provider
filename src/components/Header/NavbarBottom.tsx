@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 import { useScrollPosition } from 'hooks'
 import { Modal, Button } from 'components'
@@ -11,10 +11,10 @@ import istvGrayLogo from 'assets/istv-logo-gray.svg'
 export const NavbarBottom = () => {
   const { scrollPosition } = useScrollPosition()
   const [modal, setModal] = useState<Boolean>(false)
+  const [burgerMenu, setBurgerMenu] = useState<Boolean>(false)
 
   const modalFn = () => {
     setModal(true)
-    console.log('true')
   }
 
   const isScrollTrue = scrollPosition > 35
@@ -46,24 +46,35 @@ export const NavbarBottom = () => {
               data-collapse-toggle="navbar-sticky"
               type="button"
               className="inline-flex border items-center p-2 text-sm text-gray-500 md:hidden hover:bg-gray-100"
+              onClick={() => setBurgerMenu((prev) => !prev)}
+              aria-controls="navbar-sticky"
+              aria-expanded="false"
             >
               <IoMenu className="h-4 sm:h-6 w-6" />
             </button>
           </div>
 
           <div
-            className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+            className={`items-center overflow-hidden animation-[height] duration-500 ease-in justify-between w-full md:flex md:w-auto md:order-1 ${
+              burgerMenu ? 'h-full' : 'max-h-0 md:max-h-80'
+            }`}
             id="navbar-sticky"
           >
-            <ul className="flex flex-col mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
+            <ul className="flex flex-col border text-center border-gray-200  md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 ">
               {navRoutes.map(({ name, url }) => (
                 <li key={name}>
-                  <Link
+                  <NavLink
                     to={url}
-                    className="block text-gray-700 rounded uppercase hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0"
+                    className={({ isActive }) =>
+                      `block  uppercase p-2  md:hover:text-blue-700 ${
+                        isActive
+                          ? 'bg-zinc-100 text-blue-500 hover:bg-gray-200'
+                          : 'text-gray-700 hover:bg-gray-100'
+                      }`
+                    }
                   >
                     {name}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -76,9 +87,9 @@ export const NavbarBottom = () => {
 }
 
 const navRoutes = [
-  { name: 'Internet', url: '#' },
-  { name: 'Televizor', url: '#' },
-  { name: 'IPTV', url: '#' },
-  { name: 'Xizmatlar', url: '#' },
+  { name: 'Bosh bet', url: '/' },
+  { name: 'Internet', url: '/Internet' },
+  { name: 'Televizor', url: '/Televizor' },
+  { name: 'IPTV', url: '/IPTV' },
   { name: "Ish o'rni", url: '/vacancies' },
 ]
